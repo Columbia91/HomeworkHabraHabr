@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -14,7 +11,6 @@ namespace HomeworkHabraHabr
     {
         static void Main(string[] args)
         {
-            List<Item> list = new List<Item>();
             XmlSerializer formatter = new XmlSerializer(typeof(List<Item>));
 
             string url = "https://habrahabr.ru/rss/interesting/";
@@ -31,9 +27,27 @@ namespace HomeworkHabraHabr
 
             XmlDocument doc = new XmlDocument();
             doc.Load("file.xml");
-            XmlNodeList items = doc.SelectNodes("rss/channel/item/title");
+            XmlNodeList items = doc.SelectNodes("rss/channel/item");
+            XmlNodeList titles = doc.SelectNodes("rss/channel/item/title");
+            XmlNodeList links = doc.SelectNodes("rss/channel/item/link");
+            XmlNodeList descriptions = doc.SelectNodes("rss/channel/item/description");
+            XmlNodeList pubDates = doc.SelectNodes("rss/channel/item/pubDate");
 
-            Console.WriteLine(items.Count);
+            List<Item> list = new List<Item>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                Item item = new Item();
+                item.Title = titles[i].InnerText;
+                item.Link = links[i].InnerText;
+                item.Description = descriptions[i].InnerText;
+                item.PubDate = DateTime.Parse(pubDates[i].InnerText);
+                list.Add(item);
+            }
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item.Title);
+            }
         }
     }
 }
