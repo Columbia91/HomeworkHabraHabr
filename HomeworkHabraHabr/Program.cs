@@ -24,9 +24,10 @@ namespace HomeworkHabraHabr
             {
                 writer.Write(xml);
             }
-
+            
             XmlDocument doc = new XmlDocument();
             doc.Load("file.xml");
+
             XmlNodeList items = doc.SelectNodes("rss/channel/item");
             XmlNodeList titles = doc.SelectNodes("rss/channel/item/title");
             XmlNodeList links = doc.SelectNodes("rss/channel/item/link");
@@ -43,17 +44,6 @@ namespace HomeworkHabraHabr
                 item.PubDate = DateTime.Parse(pubDates[i].InnerText);
                 list.Add(item);
             }
-
-            foreach (var item in list)
-            {
-                Console.WriteLine(item.Title);
-            }
         }
     }
 }
-/*XmlDocument doc = new XmlDocument();
-        doc.Load("E:\\Temp\\1.xml");
-        XmlNodeList urls = doc.SelectNodes("response/audio/url");
-        foreach(XmlNode url in urls)
-            Console.WriteLine(url.InnerText);
-        Console.ReadKey(true);*/
