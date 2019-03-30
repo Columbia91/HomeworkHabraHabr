@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkHabraHabr", "HomeworkHabraHabr\HomeworkHabraHabr.csproj", "{304085E6-7386-4DC6-B4D8-8DC9C04A2C74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkStudentXml", "HomeworkStudentXml\HomeworkStudentXml.csproj", "{83473C5F-B0F0-44CD-A784-4F2F4160EFE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{304085E6-7386-4DC6-B4D8-8DC9C04A2C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{304085E6-7386-4DC6-B4D8-8DC9C04A2C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{304085E6-7386-4DC6-B4D8-8DC9C04A2C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83473C5F-B0F0-44CD-A784-4F2F4160EFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83473C5F-B0F0-44CD-A784-4F2F4160EFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83473C5F-B0F0-44CD-A784-4F2F4160EFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83473C5F-B0F0-44CD-A784-4F2F4160EFE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
